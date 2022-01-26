@@ -2,63 +2,63 @@
 
 ## Some examples
 
-Let $f(n)$ be the output, i.e. the minimum number of steps when the input is $n$. We have
+Let <img src='https://latex.codecogs.com/svg.image?f(n)' title='f(n)' /> be the output, i.e. the minimum number of steps when the input is <img src='https://latex.codecogs.com/svg.image?n' title='n' />. We have
 
-> $f(1) = 0$, 
-> $f(2) = 2$, 
-> $f(3) = 3$, 
-> $f(4) = 2 + 2 = 4$, 
-> $f(5) = 5$,
-> $f(6) = 2 + 3 = 5$,
-> $f(7) = 7$,
-> $f(8) = 2 + 2 + 2 = 6$,
-> $f(9) = 3 + 3 = 6$,
-> $f(10) = 5 + 2 = 7$,
+> <img src='https://latex.codecogs.com/svg.image?f(1)&space;=&space;0' title='f(1)&space;=&space;0' />, 
+> <img src='https://latex.codecogs.com/svg.image?f(2)&space;=&space;2' title='f(2)&space;=&space;2' />, 
+> <img src='https://latex.codecogs.com/svg.image?f(3)&space;=&space;3' title='f(3)&space;=&space;3' />, 
+> <img src='https://latex.codecogs.com/svg.image?f(4)&space;=&space;2&space;&plus;&space;2&space;=&space;4' title='f(4)&space;=&space;2&space;&plus;&space;2&space;=&space;4' />, 
+> <img src='https://latex.codecogs.com/svg.image?f(5)&space;=&space;5' title='f(5)&space;=&space;5' />,
+> <img src='https://latex.codecogs.com/svg.image?f(6)&space;=&space;2&space;&plus;&space;3&space;=&space;5' title='f(6)&space;=&space;2&space;&plus;&space;3&space;=&space;5' />,
+> <img src='https://latex.codecogs.com/svg.image?f(7)&space;=&space;7' title='f(7)&space;=&space;7' />,
+> <img src='https://latex.codecogs.com/svg.image?f(8)&space;=&space;2&space;&plus;&space;2&space;&plus;&space;2&space;=&space;6' title='f(8)&space;=&space;2&space;&plus;&space;2&space;&plus;&space;2&space;=&space;6' />,
+> <img src='https://latex.codecogs.com/svg.image?f(9)&space;=&space;3&space;&plus;&space;3&space;=&space;6' title='f(9)&space;=&space;3&space;&plus;&space;3&space;=&space;6' />,
+> <img src='https://latex.codecogs.com/svg.image?f(10)&space;=&space;5&space;&plus;&space;2&space;=&space;7' title='f(10)&space;=&space;5&space;&plus;&space;2&space;=&space;7' />,
 > ...
 
-We can only paste what we have lastly copied. When $n$ is a prime number, we have to copy `A` and paste it $n-1$ times. For that we need $n$ operations in total. 
+We can only paste what we have lastly copied. When <img src='https://latex.codecogs.com/svg.image?n' title='n' /> is a prime number, we have to copy `A` and paste it <img src='https://latex.codecogs.com/svg.image?n-1' title='n-1' /> times. For that we need <img src='https://latex.codecogs.com/svg.image?n' title='n' /> operations in total. 
 
-When $n$ is not a prime number, it seems that any output can always be represented as the sum over prime factors of $n$. For example $6=2\cdot3$ and $f(6)=2+3=5$. So we guess, for $n = p_1\cdot p_2\cdots p_n$, where $p_1,\ldots,p_n$ are prime factors of $n$, counting multiplicity, we have 
+When <img src='https://latex.codecogs.com/svg.image?n' title='n' /> is not a prime number, it seems that any output can always be represented as the sum over prime factors of <img src='https://latex.codecogs.com/svg.image?n' title='n' />. For example <img src='https://latex.codecogs.com/svg.image?6=2\cdot3' title='6=2\cdot3' /> and <img src='https://latex.codecogs.com/svg.image?f(6)=2&plus;3=5' title='f(6)=2&plus;3=5' />. So we guess, for <img src='https://latex.codecogs.com/svg.image?n&space;=&space;p_1\cdot&space;p_2\cdots&space;p_n' title='n&space;=&space;p_1\cdot&space;p_2\cdots&space;p_n' />, where <img src='https://latex.codecogs.com/svg.image?p_1,\ldots,p_n' title='p_1,\ldots,p_n' /> are prime factors of <img src='https://latex.codecogs.com/svg.image?n' title='n' />, counting multiplicity, we have 
 
-$f(n) = p_1 + p_2 + \cdots + p_n$.
+<img src='https://latex.codecogs.com/svg.image?f(n)&space;=&space;p_1&space;&plus;&space;p_2&space;&plus;&space;\cdots&space;&plus;&space;p_n' title='f(n)&space;=&space;p_1&space;&plus;&space;p_2&space;&plus;&space;\cdots&space;&plus;&space;p_n' />.
 
 Next we prove that our conjecture is right.
 
 ## Proof
 
-Let's recall the definition of $f(n)$: it is the minimum number of operations to turn `A` into $n$ copies of `A`, where we can only use the two operations `C` (copy) and `P` (paste). 
+Let's recall the definition of <img src='https://latex.codecogs.com/svg.image?f(n)' title='f(n)' />: it is the minimum number of operations to turn `A` into <img src='https://latex.codecogs.com/svg.image?n' title='n' /> copies of `A`, where we can only use the two operations `C` (copy) and `P` (paste). 
 
 Notice that, any series of operations can be decomposed as several  operation groups each starting with a `C`. For example, `CPPPPCP` can turn one `A` into ten `A`s, and we can decompose it to `[CPPPP][CP]`. The operation `[CP]` multiplies the number by 2, `[CPP]` multiplies the number by 3，`[CPPP]` multiplies the number by 4 etc. So the length of the operation `[CP...]` is the multiplication factor. 
 
-Suppose the operation to get $n$ `A`s is
+Suppose the operation to get <img src='https://latex.codecogs.com/svg.image?n' title='n' /> `A`s is
 
 `[CP..]  [CP...]  [CP...]  ...  [CP...]`
 
-where the length of the first group is$f_1$，the length of the second group is $f_2$.......the length of the last group is$f_n$. Then the total number of operations is
+where the length of the first group is<img src='https://latex.codecogs.com/svg.image?f_1' title='f_1' />，the length of the second group is <img src='https://latex.codecogs.com/svg.image?f_2' title='f_2' />.......the length of the last group is<img src='https://latex.codecogs.com/svg.image?f_n' title='f_n' />. Then the total number of operations is
 
-$f_1 + f_2 + \cdots + f_n$
+<img src='https://latex.codecogs.com/svg.image?f_1&space;&plus;&space;f_2&space;&plus;&space;\cdots&space;&plus;&space;f_n' title='f_1&space;&plus;&space;f_2&space;&plus;&space;\cdots&space;&plus;&space;f_n' />
 
-and we have $n = f_1\cdot f_2\cdots f_n$。
+and we have <img src='https://latex.codecogs.com/svg.image?n&space;=&space;f_1\cdot&space;f_2\cdots&space;f_n' title='n&space;=&space;f_1\cdot&space;f_2\cdots&space;f_n' />。
 
-If $f_1$ is not prime, say it is $10$, then we can reduce the steps further. We don't have to copy `A` one time and paste it 9 times to get 10 `A`s. We can first paste 4 times, to get 5 `A`s, and then do one `[CP]` to get 10 `A`s. This costs us 7 steps, instead of 10. 
+If <img src='https://latex.codecogs.com/svg.image?f_1' title='f_1' /> is not prime, say it is <img src='https://latex.codecogs.com/svg.image?10' title='10' />, then we can reduce the steps further. We don't have to copy `A` one time and paste it 9 times to get 10 `A`s. We can first paste 4 times, to get 5 `A`s, and then do one `[CP]` to get 10 `A`s. This costs us 7 steps, instead of 10. 
 
-In general, if $f_1$ is not prime, $f_1 = p\cdot q, p\geq2, q\geq2$. We have
+In general, if <img src='https://latex.codecogs.com/svg.image?f_1' title='f_1' /> is not prime, <img src='https://latex.codecogs.com/svg.image?f_1&space;=&space;p\cdot&space;q,&space;p\geq2,&space;q\geq2' title='f_1&space;=&space;p\cdot&space;q,&space;p\geq2,&space;q\geq2' />. We have
 
-$p + q \leq pq = f_1$，
+<img src='https://latex.codecogs.com/svg.image?p&space;&plus;&space;q&space;\leq&space;pq&space;=&space;f_1' title='p&space;&plus;&space;q&space;\leq&space;pq&space;=&space;f_1' />，
 
-namely, instead of copy and then paste $f_1-1$ times, we can instead copy and paste $p$ times, then copy again and paste $q-1$ times. In this way we can reduce $f(n)$ from $f_1+f_2+\cdots+f_n$ to $(p+q)+f_2+\cdots+f_n$. 
+namely, instead of copy and then paste <img src='https://latex.codecogs.com/svg.image?f_1-1' title='f_1-1' /> times, we can instead copy and paste <img src='https://latex.codecogs.com/svg.image?p' title='p' /> times, then copy again and paste <img src='https://latex.codecogs.com/svg.image?q-1' title='q-1' /> times. In this way we can reduce <img src='https://latex.codecogs.com/svg.image?f(n)' title='f(n)' /> from <img src='https://latex.codecogs.com/svg.image?f_1&plus;f_2&plus;\cdots&plus;f_n' title='f_1&plus;f_2&plus;\cdots&plus;f_n' /> to <img src='https://latex.codecogs.com/svg.image?(p&plus;q)&plus;f_2&plus;\cdots&plus;f_n' title='(p&plus;q)&plus;f_2&plus;\cdots&plus;f_n' />. 
 
 The proof of the inequality is as follows:
 
-For $p\geq2, q\geq2$，we have
+For <img src='https://latex.codecogs.com/svg.image?p\geq2,&space;q\geq2' title='p\geq2,&space;q\geq2' />，we have
 
-$p - 1\geq1, q - 1\geq 1 \Rightarrow (p - 1)(q - 1) \geq 1 \Rightarrow p + q \leq pq$.
+<img src='https://latex.codecogs.com/svg.image?p&space;-&space;1\geq1,&space;q&space;-&space;1\geq&space;1&space;\Rightarrow&space;(p&space;-&space;1)(q&space;-&space;1)&space;\geq&space;1&space;\Rightarrow&space;p&space;&plus;&space;q&space;\leq&space;pq' title='p&space;-&space;1\geq1,&space;q&space;-&space;1\geq&space;1&space;\Rightarrow&space;(p&space;-&space;1)(q&space;-&space;1)&space;\geq&space;1&space;\Rightarrow&space;p&space;&plus;&space;q&space;\leq&space;pq' />.
 
-We have the same argument for $f_2$: if it is not a prime, then we can further reduce the steps. This way, only when all of $f_1,\ldots,f_n$ are prime numbers is their sum miminal. 
+We have the same argument for <img src='https://latex.codecogs.com/svg.image?f_2' title='f_2' />: if it is not a prime, then we can further reduce the steps. This way, only when all of <img src='https://latex.codecogs.com/svg.image?f_1,\ldots,f_n' title='f_1,\ldots,f_n' /> are prime numbers is their sum miminal. 
 
 ## Python Code
 
-We proved that the output $f(n)$ is the sum of prime decompositions of $n$. So we just need to find all prime factos of $n$ and add them up.
+We proved that the output <img src='https://latex.codecogs.com/svg.image?f(n)' title='f(n)' /> is the sum of prime decompositions of <img src='https://latex.codecogs.com/svg.image?n' title='n' />. So we just need to find all prime factos of <img src='https://latex.codecogs.com/svg.image?n' title='n' /> and add them up.
 
 ```python
 class Solution:
@@ -75,13 +75,13 @@ class Solution:
 
 ## DP Equation
 
-When $n=20$, we can first get 10 `A`s, then copy and paste the 10 `A`s to get 20 `A`s. But how do we optimally get the 10 `A`s in the first place? For now the reader should recognize the DP equation:
+When <img src='https://latex.codecogs.com/svg.image?n=20' title='n=20' />, we can first get 10 `A`s, then copy and paste the 10 `A`s to get 20 `A`s. But how do we optimally get the 10 `A`s in the first place? For now the reader should recognize the DP equation:
 
-$f(n) = f(m) + n/m$，
+<img src='https://latex.codecogs.com/svg.image?f(n)&space;=&space;f(m)&space;&plus;&space;n/m' title='f(n)&space;=&space;f(m)&space;&plus;&space;n/m' />，
 
-where $m$ is the largest factor of $n$ in $[1, n)$. 
+where <img src='https://latex.codecogs.com/svg.image?m' title='m' /> is the largest factor of <img src='https://latex.codecogs.com/svg.image?n' title='n' /> in <img src='https://latex.codecogs.com/svg.image?[1,&space;n)' title='[1,&space;n)' />. 
 
-Notice when $n$ is prime, we have $m=1$, $n/m=n$, and $f(n)=f(1)+n=0+n=n$.
+Notice when <img src='https://latex.codecogs.com/svg.image?n' title='n' /> is prime, we have <img src='https://latex.codecogs.com/svg.image?m=1' title='m=1' />, <img src='https://latex.codecogs.com/svg.image?n/m=n' title='n/m=n' />, and <img src='https://latex.codecogs.com/svg.image?f(n)=f(1)&plus;n=0&plus;n=n' title='f(n)=f(1)&plus;n=0&plus;n=n' />.
 
 Below is the Python code that implements the DP equation. Notice the `break` statement.
 

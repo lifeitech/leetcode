@@ -2,7 +2,7 @@
 
 My leetcode solutions, in Python and SQL.
 
-Follow the links in the Problem, Code and Solution column respectively to see problem descriptions, solution code, and my explanations to some problems.
+Follow file links in the Problem, Code and Solution column respectively to see problem descriptions, solution code, and my explanations to some problems.
 
 ### Dynamic Programming
 

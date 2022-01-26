@@ -13,7 +13,7 @@ class Solution:
         return return_value
 ```
 
-Let's take the linked list $1\to2\to3\to4\to\varnothing$ as an example and walk through the code. I'll abbreviate `reverseList` as `f`. The initial input is `1`. What is `f(1)`? As the code indicates, it is `f(1.next) = f(2)`. The code can be rewritten as psudocode
+Let's take the linked list <img src='https://latex.codecogs.com/svg.image?1\to2\to3\to4\to\varnothing' title='1\to2\to3\to4\to\varnothing' /> as an example and walk through the code. I'll abbreviate `reverseList` as `f`. The initial input is `1`. What is `f(1)`? As the code indicates, it is `f(1.next) = f(2)`. The code can be rewritten as psudocode
 
 ```python
 f(1):
@@ -47,9 +47,9 @@ f(3):
 
 What is `f(4)`? Since `4.next == None`, `f(4) = 4` by the first two lines of the function `reverseList`. Thus we have gone through the process
 
-* $\qquad\qquad\qquad\varnothing \leftarrow 3 \leftarrow 4$
-* $\qquad\qquad\varnothing \leftarrow 2 \leftarrow 3$
-* $\qquad\varnothing \leftarrow 1 \leftarrow 2$
+* <img src='https://latex.codecogs.com/svg.image?\qquad\qquad\qquad\varnothing&space;\leftarrow&space;3&space;\leftarrow&space;4' title='\qquad\qquad\qquad\varnothing&space;\leftarrow&space;3&space;\leftarrow&space;4' />
+* <img src='https://latex.codecogs.com/svg.image?\qquad\qquad\varnothing&space;\leftarrow&space;2&space;\leftarrow&space;3' title='\qquad\qquad\varnothing&space;\leftarrow&space;2&space;\leftarrow&space;3' />
+* <img src='https://latex.codecogs.com/svg.image?\qquad\varnothing&space;\leftarrow&space;1&space;\leftarrow&space;2' title='\qquad\varnothing&space;\leftarrow&space;1&space;\leftarrow&space;2' />
 
 And the return value for the input head `1` is `f(1) = f(2) = f(3) = f(4) = 4`, the new head for the reversed linked list.
 

@@ -1,8 +1,8 @@
 # 516. Longest Palindromic Subsequence
 
-Let $f(i, j)$ be the length of the longest palindromic subsequence for the substring `s[i:j+1]`. Then we have
+Let <img src='https://latex.codecogs.com/svg.image?f(i,&space;j)' title='f(i,&space;j)' /> be the length of the longest palindromic subsequence for the substring `s[i:j+1]`. Then we have
 
-$f(i, j) = \begin{cases} 2 + f(i+1, j-1) & \text{ if }s[i] = s[j];\\ \max\{f(i+1, j), f(i, j-1)  \} & \text{ if }s[i]\neq s[j].\\\end{cases}$
+<img src='https://latex.codecogs.com/svg.image?f(i,&space;j)&space;=&space;\begin{cases}&space;2&space;&plus;&space;f(i&plus;1,&space;j-1)&space;&&space;\text{&space;if&space;}s[i]&space;=&space;s[j];\\&space;\max\{f(i&plus;1,&space;j),&space;f(i,&space;j-1)&space;&space;\}&space;&&space;\text{&space;if&space;}s[i]\neq&space;s[j].\\\end{cases}' title='f(i,&space;j)&space;=&space;\begin{cases}&space;2&space;&plus;&space;f(i&plus;1,&space;j-1)&space;&&space;\text{&space;if&space;}s[i]&space;=&space;s[j];\\&space;\max\{f(i&plus;1,&space;j),&space;f(i,&space;j-1)&space;&space;\}&space;&&space;\text{&space;if&space;}s[i]\neq&space;s[j].\\\end{cases}' />
 
 See below for the Python code. We have to judge whether the input `s` is a palindromic string first, otherwise we will get timout error.
 

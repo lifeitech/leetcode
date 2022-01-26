@@ -1,9 +1,9 @@
 # 198. House Robber
 
-Let $f(k)$ be the maximal amount of money you can get from the first $k$ houses. You have two choices for house $k$: you can either rob house $k$, which implies you have robbed house $k-2$, or else you have robbed house $k-1$ and so you do not rob $k$. You should choose the one with higher value. Thus we have the equation
-$f(k) = \max\{f(k-2) + \texttt{A[k]}, f(k-1)\}$.
+Let <img src='https://latex.codecogs.com/svg.image?f(k)' title='f(k)' /> be the maximal amount of money you can get from the first <img src='https://latex.codecogs.com/svg.image?k' title='k' /> houses. You have two choices for house <img src='https://latex.codecogs.com/svg.image?k' title='k' />: you can either rob house <img src='https://latex.codecogs.com/svg.image?k' title='k' />, which implies you have robbed house <img src='https://latex.codecogs.com/svg.image?k-2' title='k-2' />, or else you have robbed house <img src='https://latex.codecogs.com/svg.image?k-1' title='k-1' /> and so you do not rob <img src='https://latex.codecogs.com/svg.image?k' title='k' />. You should choose the one with higher value. Thus we have the equation
+<img src='https://latex.codecogs.com/svg.image?f(k)&space;=&space;\max\{f(k-2)&space;&plus;&space;\texttt{A[k]},&space;f(k-1)\}' title='f(k)&space;=&space;\max\{f(k-2)&space;&plus;&space;\texttt{A[k]},&space;f(k-1)\}' />.
 
-Below is a Python solution. Of course we can lower space usage from $O(n)$ to $O(1)$ by maintaining only two variables, but the purpose here is to show the DP equation in a clear way.
+Below is a Python solution. Of course we can lower space usage from <img src='https://latex.codecogs.com/svg.image?O(n)' title='O(n)' /> to <img src='https://latex.codecogs.com/svg.image?O(1)' title='O(1)' /> by maintaining only two variables, but the purpose here is to show the DP equation in a clear way.
 
 ```python
 class Solution:

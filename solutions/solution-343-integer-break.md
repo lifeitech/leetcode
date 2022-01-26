@@ -1,8 +1,8 @@
 # 343. Integer Break
 
-Let $f(n)$ be the maximal product of decompositions of $n$. The Bellman equation is a little bit tricky:
+Let <img src='https://latex.codecogs.com/svg.image?f(n)' title='f(n)' /> be the maximal product of decompositions of <img src='https://latex.codecogs.com/svg.image?n' title='n' />. The Bellman equation is a little bit tricky:
 
-$f(n) = \max\left\{ \max_{1\leq j<n}\left\{j\cdot f(n-j)\right\},\quad j\cdot(n - j)\right\}$.
+<img src='https://latex.codecogs.com/svg.image?f(n)&space;=&space;\max\left\{&space;\max_{1\leq&space;j<n}\left\{j\cdot&space;f(n-j)\right\},\quad&space;j\cdot(n&space;-&space;j)\right\}' title='f(n)&space;=&space;\max\left\{&space;\max_{1\leq&space;j<n}\left\{j\cdot&space;f(n-j)\right\},\quad&space;j\cdot(n&space;-&space;j)\right\}' />.
 
 Python code
 
